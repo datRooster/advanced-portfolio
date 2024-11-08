@@ -1,0 +1,15 @@
+type Service {
+    id: ID!
+    title: String!
+}
+
+type Query {
+    services: [Service!]! @all
+    service(id: ID!): Service @find
+}
+
+type Mutation {
+    createService(title: String!): Service @create
+    updateService(id: ID!, title: String!): Service @update
+    deleteService(id: ID!): Service @delete
+}
